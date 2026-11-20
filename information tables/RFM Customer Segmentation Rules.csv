@@ -1,0 +1,6 @@
+﻿Customer Segment,Recency,Frequency,Monetary Spend
+Champions & VIPs,≤ 90 days,> 1,≥ R$ 500
+Loyal Repeat Customers,≤ 180 days,> 1,≥ R$ 500
+High-Value Single Buyers,≤ 180 days,= 1,≥ R$ 300
+Recent Standard Buyers,≤ 180 days,= 1,≥ R$ 300
+Lapsed / At-Risk Buyers,> 180 days,Excluded,Excluded

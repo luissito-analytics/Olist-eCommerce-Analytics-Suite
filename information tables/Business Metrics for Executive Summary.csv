@@ -1,0 +1,33 @@
+﻿Business Metric Used,Definition,Dashboard Use
+Gross Revenue,"Total monetary value of delivered orders within selected year, combining item prices and freight charges.",Financial
+Gross Merchandise Value (GMV),Total merchandise sales value across delivered orders in the selected period. (excl. freight and voucher adjustments),Financial
+Average Freight Value,Mean shipping fee charged per order across all orders within selected period to capture cost shifts and monthly variance.,Financial
+Average Freight-Price Ratio,Ratio of shipping charges to order value across all order to track how heavy freight weighs on customer basket value.,Financial
+Payment Method Mix Share,Distribution of payment value across payment methods within the year. (excluding undefined tpes and aligning with distinct order aggregation.,Financial
+Boleto Settlement Lag,Average time (hours) elapsed between purchase timestamp and payment approval for Boleto transactions.,Financial
+Instant Cash Ratio,Share of payment value settled immediately without multi-day installment deferral or Boleto clearance lag.,Financial
+Installment Breakdown Share,Distribution of payment value across installment brackets where 0 installment/null cases are excluded.,Financial
+Avg. Installments Over Time,Mean number of installment payments across qualifying installment transactions (greater or equal to 1).,Financial
+High-Risk Exposure Share,Proportion of total GMV locked in extended installment plans (7-10+ installments),Financial
+Cancelled Gross Merchandise Value,"Merchandise Value associated with cancelled/unfulfilled orders, reconciled to order greain to prevent line-item inflation.",Financial
+Financial Leakage Rate,Percentage of total GMV lost to order cancellations and timeout failures.,Financial
+Boleto Non-Payment Share,Rate of generated Boleto payment slips that expired without completed payment approval.,Financial
+Voucher Spend (Promo Leakage),Total Value of voucher payments where payment type is voucher among delivered orders.,Financial
+Voucher Discount Rate,Proportion of merchandise value offset by voucher redemptions.,Financial
+Payment Realization Rate,Proportion of Order value successfully realized net of leakage and voucher/promotional reductions.,Financial
+Late Delivery Rate,Percentage of delivered orders arriving past the estimated delivery date promised at checkout.,Operations
+Average Fulfillment Lead Time,"Mean elapsed time from order approval to carrier delivery, evaluated on delivered orders.",Operations
+On-Time In-Full (OTIF) Rate,Share of delivered orders fulfilled without late arrival or fulfillment failure relative to the evaluated order base.,Operations
+Carrier Transit Delay Share,Share of late deliveries caused by carrier transit time beyond expected/estimated timelines.,Operations
+Seller Dispatch Delay Share,Share of late deliveries caused by sellers packaging past promised dispatch dates.,Operations
+Avg. Seller Dispatch Days,Average time taken by sellers to hand off packages to carriers.,Operations
+Avg. Transit Days,Average days elapsed while package is in carrier possession.,Operations
+Avg. Days Late / Early,Average variance in days between actual delivery date and estimated delivery date.,Operations
+Customer Volume,Count of distinct customers within the filtered period and RFM segment scope.,Customer
+Avg. Review Score (CSAT),Mean customer review score across reviewed orders in the active scope.,Customer
+Repeat Purchase Rate,Share of distinct customers who placed more than one order within the evaluated scope.,Customer
+Avg. Order Value (AOV),Average revenue per unique delivered order.,Customer
+Freight Burden Share,Share of total order value (price + freight) accounted for by freight charges within the customer view.,Customer
+Review Response Rate,Share of orders that received a submitted customer review.,Customer
+1-Star Friction Rate,Percentage of submitted reviews rated 1-star for 1-star reviews divided by total reviewed orders in scope.,Customer
+CSAT by Installment Bracket,"Within-tier distribution of review scores across installment brackets, calculated using distinct order counts per bracket.",Customer
