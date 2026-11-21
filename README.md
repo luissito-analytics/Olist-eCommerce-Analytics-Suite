@@ -2,7 +2,9 @@
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Completed-2E8B57?style=for-the-badge)
+
+### Author: Luis Rafael R. Javier | luisrafaelr.javier@gmail.com
+Date: November 21, 2026
 
 > **[View Live Interactive Dashboard on Tableau Public →](https://public.tableau.com:9443/views/OlistE-CommerceExecutiveIntelligenceSuite11_15_2026/0_HomePage?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
 
@@ -34,37 +36,79 @@ This suite was designed to answer three strategic questions for executive leader
 ### 01 | Financial Summary & Performance
 ![Financial Summary Dashboard](assets/01_Financial_Summary.png)
 
-In 2018, Gross Revenue (+22.11%) and GMV (+21.05%) shifted into a steadier run rate, though Freight-Price Ratio climbed +6.21% to 17.03%. Credit Cards (78.8%) and Boleto (16.8%, 33.23-hr lag) anchored payments, while Instant Cash Ratio jumped 46.39% to 4.37% and 7-10+ installments held 25.16% of GMV risk (R$ 2.07M). Financial leakage fell to 0.61% (Boleto non-payment -53.31% to 9.55%) despite a July spike (at R$17.5K, 1.95%), and Net Cash realization hit 97.91% (lowest recorded in Fashion Female Clothing at 89.95%). 
+### 01.A | Top-Line Demand & Freight Economics
+In 2018, the commercial top line of Olist matured into a steadier, predictable monthly run rate compared to 2017's volatile ramp-up, with Gross Revenue growing ***+22.11% YoY*** to R$ 8.45M and Gross Merchandise Value (GMV) expanding ***+21.05% YoY*** to R$ 7.22M. However top-line growth outpaced shipping efficiency: Average Freight Value has increase +5.54% YoY to R$ 20.48, which pushes the Average Freight-Price-Ratio to 17.03% ***(+6.21% YoY)***. This widening freight drag indicates that shipping costs are absorbing a greater share of customer basket value, particularly on smaller or single-item orders. 
+
+### 01.B | Payment Mix & Settlement Velocity
+Checkout volume remained heavily anchored by Credit ***(78.8% share at R$6.86M)*** and Boleto Bancário ***(16.8% share at R$1.46M)***, while Voucher ***(2.4% share at R$0.21M)*** and Debit ***(2.0% at R$0.17M)*** accounted for the remaining volume. Boleto transactions carried an average settlement lag of 33.23 hours ***(+0.97% YoY)*** between purchase approval and payment clearance delaying working capital availability. On the other hand, Instant Cash Ratio (which measures the immediate settlement via Debit Card and 1-installment Credit Card checkouts) has jumped to 4.37% ***(+46.39% YoY)***. This reflects the growing adoption among buyers for immediate payment options.
+
+### 01.C: Installment Behavior & Credit Exposure
+Customers averaged 3.30 installments across qualifying credit card transactions. While 1x-3x short-term plans captured the largest combined shares of installment volume at 46.3% (R$3.18M), extended credit remains a major working-capital concentration: 7-10+x long-term installment tiers accounted for ***30.1% (R$2.07M)***, placing 25.16% of total GMV in high-risk, long-dated receivable exposure that slows cash realization.
+
+### 01.D | Financial Leakage & Seasonal Anomalies
+Platform-wide Financial Leakage improved by 0.16 percentage points YoY to 0.61% of GMV, totaling R$44.9K in cancelled merchandise value ***(-5.17% YoY)***, where the monthly cancelled GMV was recorded high in the month of July ***(R$ 17, 5K at 1.95% leakage)***, triggered primarily by credit card declines, unpaid boleto slips, and other cancellation reasons. 
+
+### 01.E | Voucher Dilution & Net Cash Realization
+Total Voucher Spend grew +7.88% YoY to R$177.6K, which represents a 2.46% Voucher Discount Rate against GMV ***(-10.88% YoY)***. Even with rising promotional spend, platform-wide Net Cash Realization remained healthy at 97.91% ***(+0.28% YoY)***. At the category level, promotional dilution was heavily concentrated in specific verticals, most notable is in Fashion Female Clothing, with the lowest recorded net cash realization rate at 89.95%.
 
 * **Strategic Recommendations:**
-  * Set tiered free-shipping thresholds.
-  * Incentivize short-term/immediate payments.
-  * Automate Boleto reminders.
-  * Audit High-Leakage Category Promotions.
+  * **Introduce Tiered Free-shipping Thresholds** - Set a minimum car threshold roughly 15%-20% above current average order values rather than subsidizing shipping on small single-item baskets. By encouraging multi-item bundling in orders, this lifts basket size and naturally dilutes the current 17.03% FPR without compressing product margins.
+
+  * **Incentivize Short-term/Immediate Payments** - Offer a targeted 2%-3% instant-checkout discount or loyalty credit for Debit Card and 1-3x Credit Card payments while restricting 7-10+x installment plans to higher-ticket categories. This will build on the 46.39% surge in Instant Cash Ratio and reduces the R$2.07M  locked in long-term installment exposure.
+ 
+  * **Automate Boleto Expiration Reminders** - Trigger automated SMS, WhatsApp, or email nudges at 12 and 24 hours post-checkout, paired with one-click card-switch or slip-renewal links. Proceeding with this will compress the 33.23-hour settlement lag, lower the 9.55% Boleto non-payment rate, and prevent seasonal spikes like July 2018's 1.95% leakage surge.
+
+  * **Audit High-Leakage Category Promotions** - Establish stricter guardrails on stackable voucher codes and margin-dilutive discounting in categories like Fashion Female Clothing ***(89.95% realization)*** so underperforming verticals move closer to the 97.91% platform realization benchmark. 
 
 ---
 
 ### 02 | Operational Metrics & Delivery Performance
 ![Operations Performance Dashboard](assets/02_Operations_Summary.png)
 
-In 2018, despite Avg. Fulfillment Lead Time improving 14.88% YoY to 2.57 days, the country-wide Late Delivery Rate surged 41.35% to 9.37% (4,944 delayed orders), lowering OTIF by 2.93% to 90.63% Carrier Transit Delays caused 94.05% of late deliveries (vs. 5.95% seller dispatch), hitting Northeast states hardest, as seen by Alagoas (24.24%, Maranão (22.83%), and Ceará (21.01%), alongside high-volume corridors like São Paulo to Rio De Janeiro (avg. 13.06 days; 1.2K orders) and São Paulo to Ceará (avg. 13.56 days; 715 orders) and bulky items like Home Comfort 2 (28.57%).
+### 02.A | Nationwide Delivery Reliability & Fulfillment Speed
+In 2018, Olist improved upstream warehouse efficiency, with Average Fulfillment Lead Time dropping 14.88% to 2.57 days. However, overall delivery reliability has deteriorated downstream as the nationwide Late Delivery Rate surged to 9.37% ***(+41.35% YoY). This represents a total of 4,944 delayed orders, which pulled the platform's On-Time In-Full (OTIF) rate down to 90.63% ***(-2.93% YoY)***. This divergence highlights that while sellers handed packages over faster than in 2017, last-mile and interstate transit networks struggled to keep pace with higher 2018 order volumes. 
+
+### 02.B | Delay Root-Cause Attribution (Carrier Transit vs. Seller Dispatch)
+Breakdown the 4,944 delayed orders reveals a clear operational bottleneck: Carrier Transit Delays accounted for 94.05% of all late deliveries, whereas Seller Dispatch Delays contributed only 5.95%. Because seller dispatch lag was minimal and fulfillment lead time improved YoY, delivery failures were overwhelmingly driven by third-party logistics (3PL) line-haul congestion, regional sorting bottlenecks, and unrealistic checkout transit-time estimates rather than merchant preparation delays. 
+
+### 02.C | Geographic & State-Level Delivery Bottlenecks
+Delivery performance varied dramatically by destination region, with norther and northeastern states experiencing severe SLA breakdowns compared to the southeastern core. Alagoas recorded the highest Late Delivery Rate at 24.24%, followed closely by Maranhão at 22.83% and Ceará at 21.01%, more than double the national average of 9.37%. While southeastern hubs like São Paulo benefited from dense local carrier coverage and shorter transit distances, long-haul shipments out of the southeast suffered acute line-haul friction once crossing into the Northeast. 
+
+### 02.D | High-Volume Corridor & Hub SLA Performance
+Corridor-level diagnostics confirm that high-volume interstate lanes originating from São Paulo (SP) drove the bulk of cumulative transit lag. Major commercial corridors such as SP to RJ averaged 13.06 days in total delivery duration, while long-haul routes like SP to CE stretched to 13.65 days. Heavy reliance on centralized São Paulo fulfillment without intermediate regional cross-docking hubs compounded transit exposure on both neighboring high-density corridors and distant interstate lanes. 
 
 * **Strategic Recommendations:**
-  * Renegotiate regional 3PL SLAs for Northeast lanes.
-  * Pad estimated delivery buffers on long-haul routes.
-  * Establish regional fulfillment hubs outside São Paulo.
+  * **Renegotiate Regional 3PL SLAs & Diversify Carriers** - Establish performance-tiered contracts and backup carrier routing specifically for high-failure Northeast destinations, targeting Alagoas (24.24%), Maranhão (22.83%), and Ceará (21.01%) to reduce the 94.05% share of delays caused by carrier transit bottlenecks.
+ 
+  * **Recalibrate Checkout Delivery Buffers on Long-Haul Lanes** - Dynamically pad estimated delivery dates at checkout for historically congested corridors such as SP to RJ (13.06 days) and SP to CE (13.56 days). Setting accurate expectations upfront prevents artificial SLA misses and protects downstream customer satisfaction without slowing actual fulfillment.
+ 
+  * **Decentralize Inventory Into Regional Fulfillment Hubs** - Incentivize high-volume merchants to pre-position fast-moving SKUs in secondary distribution centers outside São Paulo (Such as Rio de Janeiro and key Northeast hubs) to shorten line-haul distances and restore platform OTIF above 93%. 
 
 ---
 
 ### 03 | Customer Satisfaction & Review Performance
 ![Customer Satisfaction & Review Performance Dashboard](assets/03_CSAT_Summary.png)
 
-Average Review Score held steady at 4.09 (+0.07 YoY) across 52,749 customers (+20.67 YoY), though Repeat Purchase Rate fell 23.00% to 2.21% as Recent Standard (46.27%) and Lapsed/At-Risk (46.19%) buyers dominated the mix. Severe 8+ day delivery delays drove 1,211 1-star reviews (peaking in Feb to March at 15-51% to 17.47% 1-star friction) and hitting Lapsed/At-Risk buyers hardest (3.92 rating, 15.02% 1-star) while Home Comfort 2 (2.40 rating, 42.86% 1-star), and 7-10+ installments (13.06% 1-star) trailed. It is recommended to deploy win-back campaigns for Lapsed buyers, tighten Carrier SLAs on bulky items/RJ lanes, and set expectations on long-term installment orders.
+### 03.A | Overall Sentiment & review Polarity
+Across 2018 delivered orders, Olist maintained an overall Average Review Score of 4.09 out of 5.00, supported by a 77.23% Positive Sentiment Share (combining 4 and 5-star ratings). Rather than clustering around neutral ratings, customer feedback exhibited strong bimodal polarity: 5-star reviews anchored the majority of volume, while dissatisfied buyers overwhelmingly left 1-star ratings rather than 2- or 3-star scores, demonstrating that checkout and fulfillment experiences tend to generate either strong advocacy or acute detraction.
+
+### 03.B | Delivery Delay Sensitivity & Review Erosion
+Logistics reliability proved to be the signle strongest operational driver of customer sentiment. Roughly 83.13% of Orders delivered on or before their promised Estimated Delivery Date received a positive rating (4 to 5), whereas 69.16% to 80.15% of deliveries that are 4+ days past their estimated delivery date experience severely low ratings (1 to 2-stars). Satisfaction erosion accelerated sharply once delays crossed the 1-to-3 day threshold, proving that uncommunicated carrier transit delays directly convert otherwise satisfied buyers into 1-star detractors.
+
+### 03.C | RFM Customer Segmentation & Retention Value
+RFM segmentation revealed a highly concentrated core of repeat and high-value buyers alongside a large single-purchase base. Top-tier segments (Champions and Loyal Customers) generated disproportionate revenue per customer and consistently recorded higher average review scores than one-time buyers. Conversely, At-Risk and Lapsed segments showed elevated concentrations of past delivery delays and 1-star friction, indicated that unresolved fulfillment failures are a primary dirver of customer churn after an initial order.
+
+### 03.D | Category-Level Sentiment & Product Quality Outliers
+While high-volume core categories such as Health & Beauty and Bed, Bath & Table sustained steady ratings near or above the 4.09 platform benchmark, specific niche verticals experienced pronounced review drag. Categories such as Office Furniture and Security & Services posted notably lower average review scores and higher detractor shares, driven bulky-item transit damage, longer assembly/fulfillment cycles, and expectation mismatches between product listings and delivered goods. 
 
 * **Strategic Recommendations:**
-  * Deploy win-back campaigns for Lapsed buyers.
-  * Tighten Carrier SLAs on bulky items/RJ lanes.
-  * Set expectations on long-term installment orders.
+  * **Trigger Proactive Delay Recovery & Micro-Vouchers** - Automatically notify customers via WhatsApp or email the moment a shipment falls behind carrier milestones (before the EDD passes) and pair high-delay orders (>3 Days late) with an automated R$10-15 recovery voucher to cushion the low review penalty.
+ 
+  * **Launch Targeted Win-Back Campaigns for At-Risk RFM Tiers** - Segment At-Risk and Hibernating customers who previously experienced a late delivery or left a 1-to-2-star review, targeting them with personalized re-engagement offers backed by priority shipping guarantees.
+
+  * **Enforce Merchant * Category Quality Audits on High-Detractor Verticals** - Require enhanced packaging standards, clearer dimensional specs, and stricter seller SLA thresholds in low-scoring categories like Office Furniture to curb transit damage and lift category ratings closer to the 4.09 platform baseline.
+ 
+  * **Convert Champions & Loyal RFM Tiers Into Brand Advocates** - Introduce a post-delivery referral or tiered loyalty perk exclusively for Champions and Loyal Customers to maximize repeat purchase frequency and compound organic acquisition.
 
 ---
 
