@@ -29,8 +29,30 @@ This suite was designed to answer three strategic questions for executive leader
 
 ![Constraints and Assumptions](assets/06_Constraints_and_Assumptions.png)
 
----
+### Dataset Coverage and Temporal Boundaries
+The analysis evaluates approximately 99,400 distinct orders placed on the Brazilian e-commerce marketplace Olist between September 2016 and October 2018. Because 2016 represents an early platform ramp-up period with partial monthly coverage and sparse order volume, all year-over-year (YoY) growth comparisons and run-rate benchmarks are anchored to full-year 2018 vs. 2017 performance rather than 2016 baselines.
 
+### Order Lifecycle and Reconciliation Scope
+To ensure strict analytical parity between PostgreSQL validation scripts and Tableau dashboards, primary commercial, operational, and sentiment KPIs are scoped exclusively to completed transactions where **order_status = 'delivered'**. Non-delivered statuses **(canceled, unavailable, invoiced, shipped, processing, and approved)** are excluded from realized revenue and fulfillment SLA calculations, and are isolated specifically within the Financial Leakage module to quantify cancelled merchandise exposure. 
+
+### Grain Control & Anti-Fan-Out Governance
+Because Olist orders frequently contain multiple line items and split payment methods (such as combined credit card and voucher payments), joining order items directly to payments introduces many-to-many fan-out inflation. All SQL staging models and Tableau calculated fields enforce strict grain separation, aggregating item-level values such as GMV and Freight at the order-item grain and payment values such as installments and net cash realization at the order-payment grain, before joining to the central order fact table. 
+
+### Operational SLA & Logistics Attribution Logic
+Delivery performance metrics rely on verified timestamp milestones rather than carrier-reported status flags:
+
+ * **Fulfillment Lead Time**: Measured from approval date of order *(order_approved_at)* to date of customer delivery *(order_delivered_customer_date)*, capturing merchant preparation and handoff speed.
+
+ * **Last-Mile & Total Transit Duration**: Measured from purchase order timestamp *(order_purchase_timestamp)* to the date of customer delivery *(order_delivered_customer_date)*.
+
+ * **Late Delivery Attribution**: An order is classified as late whenever *order_delivered_customer_date* exceeds *order_estimated_delivery_date*. Delays are attributed to **Seller Dispatch** if the merchant missed the *shipping_limit_date* and to **Carrier Transit** if the seller handed off the package on time but final customer delivery missed the estimated date.
+
+### Customer Identity, RFM & Sentiment Assumptions
+* **Unique Customer Resolution**: Because *customer_id* in the raw Olist schema is generated per order, all customer-level retention and RFM (Recency, Frequency, Monetary) metrics are aggregated on *customer_unique_id* to accurately track repeat purchasing behavior across transactions.
+
+* **Currency & Tax Normalization**: All monetary metrics are reported in nominal Brazilian Reais (R$) as recorded at checkout, without external inflation adjustments or post-sale marketplace commission deductions (as seller take-rate schedules are not included in the public dataset). 
+
+---
 ## Executive Summary & Key Findings (2018 Benchmark)
 
 ### 01 | Financial Summary & Performance
