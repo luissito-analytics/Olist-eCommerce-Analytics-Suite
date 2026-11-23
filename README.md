@@ -6,7 +6,7 @@
 ### Author: Luis Rafael R. Javier | luisrafaelr.javier@gmail.com
 Date: November 21, 2026
 
-> **[View Live Interactive Dashboard on Tableau Public →]([https://public.tableau.com:9443/views/OlistE-CommerceExecutiveIntelligenceSuite11_15_2026/0_HomePage)**
+> **[View Live Interactive Dashboard on Tableau Public →](https://public.tableau.com/views/OlistE-CommerceExecutiveIntelligenceSuite11_15_2026/0_HomePage)**
 
 This is an end-to-end business intelligence and data analytics portfolio project analyzing **~99,400 distinct orders** across the Brazilian e-commerce marketplace (**Olist**), in the 2018 reporting period using 2017 as baseline. Using **PostgreSQL** and **Tableau**, this six-tab executive suite evaluates revenue and merchandise quality, financial leakage, cash realization velocity, fulfillment bottlenecks across product categories and shipping routes between customer states, and satisfaction drivers among customer RFM segments.
 
